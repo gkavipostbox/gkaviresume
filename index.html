@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaviyarasan Gnanasekaran — Resume</title>
+<style>
+  :root{
+    --navy:#0d1b4c; --navy2:#13215e;
+    --cream:#faf3e0;
+    --blue-band:#dbe7f4;
+    --blue-text:#2e6da4;
+    --blue-link:#2f6fb0;
+    --gold:#e8b04b;
+    --star:#f0ad2b;
+    --line:#d9d9d9;
+    --text:#2b2b2b;
+    --subtext:#555;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:#e9e9e9; color:var(--text);
+    font-family:'Segoe UI', Calibri, Arial, sans-serif;
+    line-height:1.5;
+  }
+  .sheet{
+    max-width:1000px; margin:24px auto; background:#fff;
+    box-shadow:0 4px 18px rgba(0,0,0,.18);
+  }
+  .page{
+    display:grid; grid-template-columns:260px 1fr;
+  }
+  @media (max-width:720px){
+    .page{grid-template-columns:1fr;}
+  }
+  .full-width{
+    padding:26px 34px;
+  }
+
+  .page-break{
+    display:flex; align-items:center; gap:12px;
+    padding:10px 34px; background:#f2f2f2; color:#999;
+    font-size:.72rem; letter-spacing:1px; text-transform:uppercase;
+  }
+  .page-break::before, .page-break::after{
+    content:""; flex:1; border-top:1px dashed #bbb;
+  }
+
+  /* SIDEBAR */
+  .sidebar{
+    background:var(--navy); color:#fff; padding:0 0 30px;
+  }
+  .sidebar .name-block{
+    background:var(--cream); color:var(--navy); padding:22px 20px;
+    font-size:1.25rem; font-weight:700; letter-spacing:.5px;
+  }
+  .sidebar .contact{padding:22px 20px 6px; font-size:.92rem;}
+  .sidebar .contact div{margin-bottom:16px; color:#f2f2f2;}
+  .sidebar h3{
+    font-size:.98rem; margin:26px 20px 4px; font-style:italic; font-weight:600; color:#fff;
+  }
+  .sidebar .rule{height:2px; background:var(--gold); margin:0 20px 14px; position:relative;}
+  .sidebar .rule::before, .sidebar .rule::after{
+    content:""; position:absolute; top:-3px; width:8px; height:8px; border-radius:50%; background:var(--gold);
+  }
+  .sidebar .rule::before{left:-2px;} .sidebar .rule::after{right:-2px;}
+
+  .skill-item{padding:0 20px; margin-bottom:14px;}
+  .skill-item .sk-name{font-weight:700; font-size:.95rem; margin-bottom:3px;}
+  .stars{color:var(--star); letter-spacing:2px; font-size:1rem;}
+  .stars .off{color:#5b699e;}
+
+  /* MAIN */
+  .main{padding:24px 26px;}
+
+  .stats-row{display:flex; gap:10px; margin-bottom:14px; flex-wrap:wrap;}
+  .stat-card{
+    flex:1 1 100px; background:var(--cream); border-radius:6px; text-align:center;
+    padding:14px 6px; box-shadow:0 2px 4px rgba(0,0,0,.08);
+  }
+  .stat-card .num{font-size:1.5rem; font-weight:800; color:#1a1a1a;}
+  .stat-card .lab{font-size:.72rem; color:#333; margin-top:2px;}
+
+  .intro-box{
+    background:#fff; border:1px solid var(--line); border-radius:6px;
+    padding:14px 18px; margin-bottom:14px; box-shadow:0 1px 3px rgba(0,0,0,.08);
+    font-size:.92rem; color:var(--text);
+  }
+  .intro-box p{margin:0 0 8px;}
+  .intro-box p:last-child{margin-bottom:0;}
+
+  .role-row{display:flex; gap:10px; margin-bottom:22px; flex-wrap:wrap;}
+  .role-card{
+    flex:1 1 120px; text-align:center; padding:12px 8px; border-radius:4px; font-weight:700; font-size:.92rem;
+    box-shadow:0 1px 3px rgba(0,0,0,.1);
+  }
+  .role-card.a{background:var(--cream); color:var(--navy);}
+  .role-card.b{background:var(--navy); color:#fff;}
+  .role-card.c{background:var(--cream); color:var(--blue-text);}
+
+  .section-title{
+    color:var(--blue-text); font-size:1.15rem; font-weight:700; margin:0 0 4px;
+  }
+  .section-rule{
+    height:2px; background:var(--blue-link); width:100%; margin-bottom:14px; position:relative;
+  }
+  .section-rule::before, .section-rule::after{
+    content:""; position:absolute; top:-3px; width:8px; height:8px; border-radius:50%; background:var(--blue-link);
+  }
+  .section-rule::before{left:-2px;} .section-rule::after{right:190px;}
+
+  .box{
+    border:1px solid var(--line); border-radius:4px; margin-bottom:24px; overflow:hidden;
+  }
+  .skills-grid{
+    display:grid; grid-template-columns:1fr 1fr;
+  }
+  .skills-grid .col{padding:14px 18px;}
+  .skills-grid .col + .col{border-left:1px solid var(--line);}
+  .skills-grid a, .skills-grid .item{
+    display:block; color:var(--blue-link); text-decoration:none; padding:7px 0;
+    border-bottom:1px solid #f0f0f0; font-size:.92rem;
+  }
+  .skills-grid .item:last-child{border-bottom:none;}
+  .skills-grid .item.dark{color:#1a1a1a;}
+
+  .timeline-row{
+    display:flex; justify-content:space-between; align-items:center; padding:22px 10px;
+    flex-wrap:wrap; gap:16px;
+  }
+  .tl{text-align:center; flex:1 1 180px;}
+  .tl .role{color:var(--blue-link); font-weight:700; font-size:.85rem; margin-bottom:6px;}
+  .tl .org{font-size:1.2rem; font-weight:700; margin-bottom:6px;}
+  .tl .org.cog{color:#1a3e8f;}
+  .tl .org.ltm{color:#e8503a;}
+  .tl .org.mph{color:#7a4fc2;}
+  .tl .date{color:var(--blue-link); font-weight:700; font-size:.82rem;}
+
+  /* Experience Summary */
+  .job-band{
+    display:flex; justify-content:space-between; background:var(--blue-band);
+    padding:8px 14px; font-weight:700; font-size:.95rem; flex-wrap:wrap; gap:6px;
+    margin-bottom:8px;
+  }
+  .job-band .date{font-weight:700; white-space:nowrap;}
+
+  .sub-role{
+    display:flex; gap:14px; flex-wrap:wrap; margin:14px 0 6px;
+    font-weight:700; font-size:.92rem;
+  }
+  .sub-role .date{color:var(--blue-link); min-width:150px;}
+  .sub-role .title{color:var(--text);}
+
+  ul.bullets{margin:6px 0 16px; padding-left:22px; font-size:.92rem;}
+  ul.bullets li{margin-bottom:6px;}
+  p.desc{font-size:.92rem; margin:4px 0 10px;}
+
+  .client-title{
+    font-style:italic; font-weight:700; margin:16px 0 4px; font-size:.92rem;
+  }
+  .client-title.underline{text-decoration:underline;}
+
+  h2.psub{
+    color:var(--text); font-size:1.02rem; font-weight:700; margin:30px 0 14px;
+  }
+
+  footer{
+    text-align:center; padding:18px; color:#888; font-size:.78rem; background:#fff;
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+<div class="page">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="name-block">KAVIYARASAN<br>GNANASEKARAN</div>
+    <div class="contact">
+      <div><strong>+91-9790950510</strong></div>
+      <div>gkavipostbox@gmail.com</div>
+      <div><strong>Chennai</strong></div>
+    </div>
+
+    <h3>Skillset Experience</h3>
+    <div class="rule"></div>
+    <div class="skill-item"><div class="sk-name">Architect</div><div class="stars">★★★★★</div></div>
+    <div class="skill-item"><div class="sk-name">AS400</div><div class="stars">★★★★★</div></div>
+    <div class="skill-item"><div class="sk-name">Solutioning</div><div class="stars">★★★<span class="off">☆</span><span class="off">☆</span></div></div>
+    <div class="skill-item"><div class="sk-name">Team Management</div><div class="stars">★★★★<span class="off">☆</span></div></div>
+
+    <h3>Industry Experience</h3>
+    <div class="rule"></div>
+    <div class="skill-item"><div class="sk-name">Retail</div><div class="stars">★★★★★</div></div>
+    <div class="skill-item"><div class="sk-name">Insurance</div><div class="stars">★★★★★</div></div>
+    <div class="skill-item"><div class="sk-name">Healthcare</div><div class="stars">★★★<span class="off">☆</span><span class="off">☆</span></div></div>
+    <div class="skill-item"><div class="sk-name">TTH</div><div class="stars">★★<span class="off">☆</span><span class="off">☆</span><span class="off">☆</span></div></div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">17+</div><div class="lab">Years experience</div></div>
+      <div class="stat-card"><div class="num">15+</div><div class="lab">Large programs</div></div>
+      <div class="stat-card"><div class="num">30+</div><div class="lab">Solutioning</div></div>
+      <div class="stat-card"><div class="num">9+</div><div class="lab">Consulting</div></div>
+    </div>
+
+    <div class="intro-box">
+      <p>17+ years of strong experience in Analysis, Design and Development of AS/400 applications. Assessing &amp; Designing Solutions for various types of Systems and Integrations, App and DB migrations through either rehost, refactor, re-platform, rewrite or replace</p>
+      <p>Looking forward to a challenging role</p>
+    </div>
+
+    <div class="role-row">
+      <div class="role-card a">Architect</div>
+      <div class="role-card b">Project manager</div>
+      <div class="role-card c">Consultant</div>
+    </div>
+
+    <div class="section-title">Skills Expertise</div>
+    <div class="section-rule"></div>
+    <div class="box skills-grid">
+      <div class="col">
+        <span class="item">AWS Certified Solution Architect</span>
+        <span class="item">Azure Certified Solution Architect</span>
+        <span class="item">AS400 (IBM i)</span>
+        <span class="item">RPGLE, CLLE, SQLRPGLE</span>
+        <span class="item">RPG/400, CL/400, DB2/400</span>
+        <span class="item">COBOL, COBOL/400, NetCOBOL</span>
+        <span class="item">SYNON</span>
+        <span class="item">Python</span>
+        <span class="item">C/C++</span>
+        <span class="item">Java</span>
+        <span class="item">PowerCenter Designer</span>
+      </div>
+      <div class="col">
+        <span class="item">MicroFocus Enterprise Analyzer</span>
+        <span class="item">Job schedulers (ROBOT, Control M &amp; TIDAL)</span>
+        <span class="item">X-Analysis Suite</span>
+        <span class="item">Rational Developer for i</span>
+        <span class="item">Git &amp; DevOps</span>
+        <span class="item">Change Management (ALDON, MDCMS)</span>
+        <span class="item">Ubuntu / Cent Linux OS</span>
+        <span class="item">RFP/Solutioning/Estimation</span>
+        <span class="item">Requirement Gathering</span>
+        <span class="item">Agile/Scrum</span>
+        <span class="item">Team management</span>
+      </div>
+    </div>
+
+    <div class="section-title">Experience Timeline</div>
+    <div class="section-rule"></div>
+    <div class="box">
+      <div class="timeline-row">
+        <div class="tl">
+          <div class="role">Programmer to Manager</div>
+          <div class="org cog">cognizant</div>
+          <div class="date">Dec 2007 – Mar 2022</div>
+        </div>
+        <div class="tl">
+          <div class="role">Sr Manager</div>
+          <div class="org ltm">LTM</div>
+          <div class="date">Mar 2022 – Feb 2025</div>
+        </div>
+        <div class="tl">
+          <div class="role">Sr Enterprise Architect</div>
+          <div class="org mph">Mphasis</div>
+          <div class="date">Feb 2025 – Till date</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<div class="page-break">Page 2</div>
+<div class="full-width">
+
+    <div class="section-title" style="border-bottom:none;">Experience Summary</div>
+    <div style="margin-bottom:14px;"></div>
+
+    <div class="job-band">
+      <span>Senior Enterprise Architect, Mphasis Pvt. Limited, Chennai</span>
+      <span class="date">Feb 2025 – Till Date</span>
+    </div>
+    <ul class="bullets">
+      <li>Architected modernization solutions for legacy IBM i/AS400 applications, covering assessment, target-state architecture, transformation strategy, migration planning, effort estimation, and proposal development.</li>
+      <li>Led development of GenAI-enabled application analysis and modernization accelerators to improve assessment and solutioning effectiveness.</li>
+      <li>Shaped modernization opportunities across banking, insurance, financial services, and enterprise domains through workshops, discovery sessions, POCs, PoVs, and executive presentations.</li>
+      <li>Evaluated IBM, AWS, CAST, ARCAD, Fresche, Devin, and partner modernization products through demonstrations, validations, technical assessments, and solution walkthroughs and recommended modernization, cloud, AI, and application analysis platforms to accelerate legacy transformation programs.</li>
+      <li>Created reusable frameworks, estimation models, reference architectures, capability assets, and AI adoption playbooks for enterprise modernization initiatives.</li>
+      <li>Partnered with client stakeholders, technology vendors, and delivery teams to define modernization roadmaps and support strategic transformation pursuits.</li>
+      <li>Contributed to practice growth through innovation initiatives, knowledge sharing, capability development, and technical talent assessment.</li>
+      <li>Contributed to modernization pursuits, solutioning activities, proposals, and client engagements that supported approximately $20M+ annual opportunity pipeline across banking, insurance, and enterprise accounts.</li>
+    </ul>
+
+    <div class="job-band">
+      <span>Senior Architect/Senior Manager, LTIMindtree, Chennai</span>
+      <span class="date">Mar 2023 – Feb 2025</span>
+    </div>
+    <ul class="bullets">
+      <li>Application Development &amp; Maintenance, App migration, Assessing &amp; Designing Solutions for various types of Systems and Integrations, App and DB migrations through either rehost, refactor, re-platform, rewrite or replace.</li>
+    </ul>
+
+    <div class="job-band">
+      <span>Architect, Cognizant Technology Solutions India Pvt. Limited, Chennai</span>
+      <span class="date">Dec 2007 – Mar 2023</span>
+    </div>
+
+    <div class="sub-role"><span class="date">Mar 2022 – Mar 2023</span><span class="title">Architect, Cognizant Technology Solutions India Pvt. Limited</span></div>
+    <p class="desc">Assessing &amp; Designing Solutions for various types of Systems and Integrations, App and DB migrations through either rehost, refactor, re-platform, rewrite or replace.</p>
+
+    <div class="sub-role"><span class="date">Oct 2014 - Feb 2022</span><span class="title">Senior Associate, Cognizant Technology Solutions India Pvt. Limited</span></div>
+    <p class="desc">Even though, my core skillset is in IBM i also known AS/400 &amp; IBM mainframes, I was assessing and providing solutions to customers for their modernization by leveraging their existing technical portfolio or new cost-effective Infrastructure for running applications. Along with my existing responsibilities, I was doing PoC on various types of modern services like AWS Administration, GCP cloud services like BigQuery, Kafka streaming and programming languages C++/Java and latest interpreter programming languages like Python, Go &amp; also on different types of static code analyzers (like SonarQube) and security assessment tools (like Checkmarx)</p>
+    <ul class="bullets">
+      <li>Design End to end solution for Application modernization and Data migration based on pain points</li>
+      <li>Design integrations between Enterprise Resource planning packages (SAP, Oracle JDE)</li>
+      <li>Validate advantages and disadvantages of different solutions on premise and on cloud</li>
+      <li>Solution/Technical Architecting (doing proof of concept) to move legacy applications to Cloud</li>
+      <li>Develop custom tools to accelerate migration &amp; writing tools in Python for local automation</li>
+      <li>Use ETL tools like Informatica power center to create transformations</li>
+      <li>Lead different types of <strong>teams in small and medium sizes</strong> in implementing the solutions</li>
+      <li>Groom people at different experience levels in Technical architecting</li>
+    </ul>
+
+    <div class="sub-role"><span class="date">Dec 2007 - Sep 2014</span><span class="title">Senior Associate, Cognizant Technology Solutions India Pvt. Limited</span></div>
+    <ul class="bullets">
+      <li>Started off as a Junior Developer</li>
+      <li>Moved up to Senior Developer and Team Lead</li>
+      <li>Worked as an Onsite Coordinator, Brainstormed with Client Directors to understand their application pain areas</li>
+      <li>Worked in IBM i OS upgrade from V5R4 to V6R1</li>
+      <li>Executed enhancement in a single and multi-member team in capacities of Developer and Techno-functional expert</li>
+      <li>Requirement gathering, Agile Development, Effort Estimation and Team Management</li>
+    </ul>
+
+<div class="page-break">Page 3</div>
+
+    <h2 class="psub">Project specific Activities &amp; Client Site experiences:</h2>
+
+    <div class="sub-role"><span class="date">Mar 2023 – Till date</span><span class="title">Senior Manager, LTIMindTree, Chennai</span></div>
+    <div class="client-title">Client 2: US based Business Travel management Company (Application Development and Maintenance/Solution Design and Implementation) – Current</div>
+    <ul class="bullets">
+      <li>Playing the role of Project Delivery manager for couple of applications as SPOC. Being part of client's migration of applications from AS400 to Java</li>
+      <li>Managing a team of 15 members along with project management activities</li>
+      <li>Be part of Brainstorming activities to identify the solution for migration issues</li>
+    </ul>
+    <div class="client-title underline">Client 1: US based Industrial equipment Distributor (Solution Design and Implementation)</div>
+    <ul class="bullets">
+      <li>Created framework to decommission 3rd party application to be replaced with a different version of tool</li>
+      <li>Been part of client's ambitious project to migrate their AS400 applications into SAP and helping them to design framework</li>
+      <li>Managed a team of 25 members along with project management activities</li>
+      <li>Provided solutions on various complex application scenarios</li>
+    </ul>
+
+    <div class="sub-role"><span class="date">Mar 2022 – Mar 2023</span><span class="title">Architect, Cognizant Technology Solutions India Pvt. Chennai</span></div>
+    <div class="client-title">Client 2: US based PBM - Pharmacy Benefit Manager (Solution Design and Implementation)</div>
+    <ul class="bullets">
+      <li>Built customized internal tools for the customer</li>
+      <li>Solution designing to implement ILE concepts and modularization of program to make it reusable</li>
+      <li>Provided solutions to complex application scenarios</li>
+      <li>Managed a team of 10 people along with project management activities</li>
+    </ul>
+    <div class="client-title">Client 1: US based payment processor (Solution Design and Implementation)</div>
+    <ul class="bullets">
+      <li>Designed a cost effective solution for the customer to migrate their existing legacy application running on Micro Focus COBOL (Net Express) into Fujitsu NetCOBOL with thorough market research and ROI calculation</li>
+      <li>Provided solutions to overcome license shortage issues by hosting compiler on remote machine and leveraging VSCODE, SSH and MSBUILD tools develop and compile concurrently</li>
+      <li>Built python based linter and Mentoring a team of 5 members</li>
+    </ul>
+
+    <div class="sub-role"><span class="date">Mar 2019 - Feb 2022</span><span class="title">Senior Associate, Cognizant Technology Solutions India Pvt. Limited, Chennai</span></div>
+    <div class="client-title">Client 2: US based Mutual Insurance Company (Proof of Concept &amp; Batch performance Optimization)</div>
+    <ul class="bullets">
+      <li>Completed a Proof of Concept on Kafka to reduce reliance on Message Queues</li>
+      <li>Helped customer to optimize their batch processes and collect performance statistics without external tools</li>
+      <li>Used X-Analysis view to create flow chart, data flow diagram, object references, etc. and documenter extensively to accelerate analysis on End Of Day (EOD) processes</li>
+      <li>Analyzed and presented patterns in batch processes to Subject Matter Expert with feasible solutions to optimize long running processes</li>
+      <li>Designed, developed and implemented solution to optimize long running EOD processes</li>
+    </ul>
+    <div class="client-title">Client 1: US based bridal ring maker (Application support)</div>
+    <p class="desc">Enhanced existing applications and provided application support including UAT support for major projects</p>
+
+    <div class="page-break">Page 4</div>
+
+    <div class="sub-role"><span class="date">Nov 2015 - Feb 2019</span><span class="title">Senior Associate, Cognizant Technology Solutions US Corp, Client Site</span></div>
+    <div class="client-title">Client 1: US based bridal ring maker (Projects - API development to receive product attributes from in-house Product management application)</div>
+    <ul class="bullets">
+      <li>Worked along with Tiffany architects to design and develop the application</li>
+      <li>Extracted Business rules from AS/400 for new in-house application development</li>
+      <li>Developed a new API to process product and attributes into DB/400 when published and pushed into MQ by IBM Integration Bus (IIB)</li>
+      <li>Remediated existing AS/400 application to stop creating product and attributes</li>
+    </ul>
+
+    <div class="sub-role"><span class="date">Aug 2019 - Oct 2015</span><span class="title">Senior Associate, Cognizant Technology Solutions India Pvt. Limited, Chennai</span></div>
+    <div class="client-title">Client 1: Europe based footwear manufacturer (Projects - Batch performance Optimization)</div>
+    <ul class="bullets">
+      <li>Conducted workshops with customer to identify their pain areas and prioritized for improvements</li>
+      <li>Collected AS/400 software components to plot process flow making it easier to accelerate the analysis</li>
+      <li>Analyzed AS/400 software components at low level code for optimizing it performance</li>
+    </ul>
+
+    <div class="sub-role"><span class="date">Mar 2015 - Jul 2015</span><span class="title">Senior Associate, Cognizant Technology Solutions Asia Pacific Pvt. Limited, Singapore</span></div>
+    <div class="client-title">Client 1: Singapore based health care products manufacturer (Projects - Data archival into Informatica ILM Archive)</div>
+    <ul class="bullets">
+      <li>Received tribal knowledge and replaced client Subject Matter Expert</li>
+      <li>Transformed requirement for Target Team and Developed queries to extract reports post data archival</li>
+      <li>Learnt and built a VBA script for producing a report within short span due to limitation in data archive retrieval</li>
+    </ul>
+
+    <div class="sub-role"><span class="date">Jul 2014 - Feb 2015</span><span class="title">Senior Associate, Cognizant Technology Solutions India Pvt. Limited, Chennai</span></div>
+    <div class="client-title">Client 3: US based Mortgage loaner (Projects - Data Dictionary preparation)</div>
+    <ul class="bullets">
+      <li>Designed initial layout of data dictionary</li>
+      <li>Clarified Subject Matter Expert to get the data dictionary signed off</li>
+      <li>Spearheaded and managed a team of 5 members</li>
+    </ul>
+    <div class="client-title">Client 2: US based Hip and Knee replacement Hospital (Projects - Proof of Concept for application migration with Zend Server using LAMP architecture)</div>
+    <ul class="bullets">
+      <li>Extracted business rules from AS/400 RPGLE also cleaned up their source repository</li>
+      <li>Transformed business rules for target application in PHP</li>
+      <li>Built appropriate queries to extract data from DB2/400</li>
+      <li>Validated data consistency between current and target application</li>
+    </ul>
+    <div class="client-title">Client 1: US based Eye Care provider (Enhancements - Remediate app to support ICD10 health care codes)</div>
+    <ul class="bullets">
+      <li>Remediated all identified RPGLE programs in earlier assessment</li>
+      <li>Prepared test cases, Completed Unit testing and addressed QA defects</li>
+      <li>Spearheaded Team of 5 members</li>
+    </ul>
+
+    <div class="sub-role"><span class="date">Aug 2012 - Jun 2014</span><span class="title">Associate, Cognizant Technology Solutions India Pvt. Limited, Chennai</span></div>
+    <div class="client-title">Client 2: US based Eye Care provider (Enhancements - Assess app to support ICD10 health care codes)</div>
+    <ul class="bullets">
+      <li>Assessed and identified RPGLE programs to be remediated, estimated effort for completing remediation</li>
+      <li>Presented findings that is blocking remediation in existing app and brainstormed with client</li>
+    </ul>
+    <div class="client-title">Client 1: Singapore based Luxury jewelry reseller at airports worldwide (Projects &amp; Enhancements – Inventory management/Correction)</div>
+    <ul class="bullets">
+      <li>Helped customer to monitor transaction processing</li>
+      <li>Monitored transaction interfaced from source AS/400 system</li>
+      <li>Identified missing transaction at target SAP DB</li>
+      <li>Analyzed root cause for missing transactions and proposed fixes and enhancements</li>
+    </ul>
+
+    <div class="page-break">Page 5</div>
+
+    <div class="sub-role"><span class="date">Jan 2012 - Jul 2012</span><span class="title">Associate, Cognizant Technology Solutions Asia Pacific Pvt. Limited, Singapore. Client Site</span></div>
+    <div class="client-title">Client 1: Singapore based Luxury jewelry reseller at airports worldwide (Application support)</div>
+    <ul class="bullets">
+      <li>Brainstormed with client Directors/IT managers on AS/400 show stoppers</li>
+      <li>Helped application users and close regular support requests on AS/400 application at onsite</li>
+      <li>Gathered requirement/information required by offshore team from applications users</li>
+      <li>Involved in iSeries upgrades by executing pre and post-upgrade checks</li>
+    </ul>
+
+    <div class="sub-role"><span class="date">Nov 2010 - Dec 2007</span><span class="title">Associate, Cognizant Technology Solutions India Pvt. Limited, Chennai</span></div>
+    <div class="client-title">Client 1: Singapore based Luxury jewelry reseller at airports worldwide (Projects - Cross docking application &amp; Application Support)</div>
+    <ul class="bullets">
+      <li>Played various roles starting from junior developer up to the position of Team lead and did app support including batch job monitoring</li>
+      <li>Gathered requirement and transformed to detailed technical specification</li>
+      <li>Prepared test cases, executed Unit testing and addressed QA defects</li>
+    </ul>
+
+</div>
+</div>
+
+<footer>Kaviyarasan Gnanasekaran — Resume</footer>
+
+</body>
+</html>
